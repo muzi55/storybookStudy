@@ -5,7 +5,7 @@ import { Button } from "../components/button/Button";
 // btn이 받는 props 를 정의함
 const meta = {
   // 현재 경로를 나타냄
-  title: "Basic/Button",
+  title: "Text/Button",
   // 컴포넌트의 스토리를 작성함
   component: Button,
   parameters: {
