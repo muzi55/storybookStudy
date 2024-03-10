@@ -3,5 +3,9 @@ interface LabelProps {
   children: string;
 }
 export default function Label({ htmlFor, children }: LabelProps) {
-  return <label htmlFor={htmlFor}>{children}</label>;
+  return (
+    <label className="text-sm text-primary" htmlFor={htmlFor}>
+      {children}
+    </label>
+  );
 }
