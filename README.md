@@ -1,30 +1,63 @@
-# React + TypeScript + Vite
+# 인프런 스토리북 강의 따라하기
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 스토리북 설정
 
-Currently, two official plugins are available:
+[storybook vite 설정](https://storybook.js.org/docs/builders/vite)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. storybook 인스톨
 
-## Expanding the ESLint configuration
+```
+npm install @storybook/builder-vite --save-dev
+```
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
+2. `.storybook/main.ts` 스토리북 설정 추가 / 코어부분 추가
 
 ```js
 export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
+  stories: ["../src/**/*.mdx", "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
+  addons: ["@storybook/addon-links", "@storybook/addon-essentials"],
+  core: {
+    builder: "@storybook/builder-vite", // 👈 The builder enabled here.
   },
-}
+};
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## 테일윈드 설정
+
+[talewind vite 설정](https://tailwindcss.com/docs/guides/vite)
+
+1. 테일윈드 인스톨
+
+```
+npm install -D tailwindcss postcss autoprefixer
+npx tailwindcss init -p
+```
+
+2. 테일윈드 콘피그 설정
+
+```js
+/** @type {import('tailwindcss').Config} */
+export default {
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {},
+  },
+  plugins: [],
+};
+```
+
+3. `index.css` 상단에 임포트하기
+
+```css
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+## fontsource
+
+1. npm에 폰트소스 - 폰트 이름 검색 `fontsource noto sans kr `
+
+2. npm install @fontsource/noto-sans-kr 인스톨
+
+3.
