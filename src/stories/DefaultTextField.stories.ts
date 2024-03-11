@@ -27,6 +27,7 @@ const meta = {
     alt: { control: "text", description: "아이콘의 이미지의 alt", defaultValue: "이미지 alt" },
     placeholder: { control: "text", description: "인풋의 placeholder", defaultValue: "" },
     value: { control: "text", description: "인풋의 값", defaultValue: "" },
+    id: { control: "text", description: "인풋의 아이디값", defaultValue: "" },
     isError: { control: "boolean", description: "인풋의 에러 불린값", defaultValue: false },
 
     onClick: { action: "clicked", description: "버튼의 클릭 이벤트" },
@@ -54,5 +55,6 @@ export const Default: Story = {
     onChange: () => {},
     value: "",
     isError: false,
+    id: "email",
   },
 };
