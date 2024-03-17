@@ -8,7 +8,9 @@ export default {
     },
     borderRadius: {
       "primary-button": "5px",
+      "tag-button": "18px",
     },
+
     fontSize: {
       xs: [
         "12px",
@@ -54,6 +56,7 @@ export default {
       mono200: " #bebebe",
       mono300: " #d6d7d9",
       error: " #d01e1e",
+      "dark-opacity": "#00000010",
     },
   },
   plugins: [],
