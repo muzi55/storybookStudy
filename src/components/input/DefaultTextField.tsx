@@ -13,6 +13,11 @@ interface IDefaultTextField {
   id: string;
 }
 
+/**
+ *
+ * @param {string} errorMessage - 어쩌구
+ * @returns
+ */
 function DefaultTextField({ errorMessage, iconPath, alt, onClick, placeholder, onChange, value, isError, id }: IDefaultTextField) {
   const [isFocused, setFocused] = useState<boolean>(false);
   const borderColor = isFocused ? "border-secondary" : !value ? "border-mono300" : "border-primary";

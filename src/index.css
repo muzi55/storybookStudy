@@ -5,3 +5,13 @@
 body {
   font-family: "Noto Sans KR";
 }
+
+button {
+  transition: filter 0.3s;
+  &:hover {
+    filter: brightness(80%);
+  }
+  &:active {
+    filter: brightness(120%);
+  }
+}
